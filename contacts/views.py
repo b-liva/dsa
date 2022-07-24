@@ -1,8 +1,9 @@
 from django.shortcuts import render
-
+from django.views.generic.list import ListView
+from .models import Contact
 # Create your views here.
 from django.http import HttpResponse
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+class ContactListView(ListView):
+    model = Contact
