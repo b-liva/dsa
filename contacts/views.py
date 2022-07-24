@@ -7,3 +7,4 @@ from django.http import HttpResponse
 
 class ContactListView(ListView):
     model = Contact
+    context_object_name = 'contacts'
