@@ -4,3 +4,7 @@
 *.sqlite3
 
 contacts/__pycache__/
+
+dsa/__pycache__/
+
+*.pyc
