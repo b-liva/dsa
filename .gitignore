@@ -2,3 +2,5 @@
 .idea/
 
 *.sqlite3
+
+contacts/__pycache__/
