@@ -12,6 +12,6 @@ class ContactListView(ListView):
 
 class ContactCreateView(CreateView ):
     model = Contact
-    fields = ('first_name', 'last_name', 'phone', 'job')
+    fields = ('first_name', 'last_name', 'phone', 'job', 'education')
 
     success_url = "/contacts"
