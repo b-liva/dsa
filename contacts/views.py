@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.urls import reverse
 from django.views.generic import ListView, CreateView
+
+from .forms import ContactForm
 from .models import Contact
 # Create your views here.
-from django.http import HttpResponse
 
 
 class ContactListView(ListView):
@@ -10,8 +11,9 @@ class ContactListView(ListView):
     context_object_name = 'contacts'
 
 
-class ContactCreateView(CreateView ):
+class ContactCreateView(CreateView):
     model = Contact
-    fields = ('first_name', 'last_name', 'phone', 'job', 'education')
+    form_class = ContactForm
 
-    success_url = "/contacts"
+    def get_success_url(self):
+        return reverse('contact:add')

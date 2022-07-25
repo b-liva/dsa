@@ -16,30 +16,46 @@
             <p class="u-text u-text-2">We are an ambitious studio and are looking for enthusiastic people to join our
                 team.</p>
             <div class="u-form u-palette-1-dark-1 u-radius-10 u-form-1">
-                <form action="#" method="POST" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form"
-                      style="padding: 50px;" source="email" name="form">
+                <form method="POST" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form"
+                      style="padding: 50px;">
+                    {% if error %}
+                        {{ error }}
+                    {% endif %}
+                    {% csrf_token %}
                     <div class="u-form-email u-form-group u-form-partition-factor-2 u-form-group-1">
-                        <label for="email-319a" class="u-label u-text-body-alt-color u-label-1">Email</label>
-                        <input type="email" placeholder="Enter a valid email address" id="email-319a" name="email"
-                               class="u-border-3 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"
-                               required="">
+                        <label for="email-319a"
+                               class="u-label u-text-body-alt-color u-label-1">{{ form.first_name.label }}</label>
+                        {{ form.first_name }}
+                        {{ form.first_name.errors }}
                     </div>
                     <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-2">
-                        <label for="name-319a" class="u-label u-text-body-alt-color u-label-2">Name</label>
-                        <input type="text" placeholder="Enter your Name" id="name-319a" name="name"
-                               class="u-border-3 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"
-                               required="">
+                        <label for="name-319a"
+                               class="u-label u-text-body-alt-color u-label-2">{{ form.last_name.label }}</label>
+                        {{ form.last_name }}
+                        {{ form.last_name.errors }}
                     </div>
-                    <div class="u-form-group u-form-message u-form-group-3">
-                        <label for="message-319a" class="u-label u-text-body-alt-color u-label-3">Message</label>
-                        <textarea placeholder="Enter your message" rows="4" cols="50" id="message-319a" name="message"
-                                  class="u-border-3 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle"
-                                  required=""></textarea>
+                    <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-2">
+                        <label for="name-319a"
+                               class="u-label u-text-body-alt-color u-label-2">{{ form.phone.label }}</label>
+                        {{ form.phone }}
+                        {{ form.phone.errors }}
                     </div>
+                    <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-2">
+                        <label for="name-319a"
+                               class="u-label u-text-body-alt-color u-label-2">{{ form.job.label }}</label>
+                        {{ form.job }}
+                        {{ form.job.errors }}
+                    </div>
+                    <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-2">
+                        <label for="name-319a"
+                               class="u-label u-text-body-alt-color u-label-2">{{ form.education.label }}</label>
+                        {{ form.education }}
+                        {{ form.education.errors }}
+                    </div>
+
                     <div class="u-align-left u-form-group u-form-submit u-form-group-4">
-                        <a href="#"
-                           class="u-active-palette-2-light-2 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-2 u-radius-8 u-text-palette-2-base u-white u-btn-1">Submit</a>
-                        <input type="submit" value="submit" class="u-form-control-hidden">
+                        <button id="form-btn"
+                                class="u-active-palette-2-light-2 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-2 u-radius-8 u-text-palette-2-base u-white u-btn-1">ارسال</button>
                     </div>
                     <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent.</div>
                     <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors
@@ -87,10 +103,4 @@
             </div>
         </div>
     </section>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button>ارسال</button>
-    </form>
 {% endblock %}
