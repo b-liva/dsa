@@ -15,6 +15,12 @@
             <h2 class="u-text u-text-1">Let’s Stay In Touch</h2>
             <p class="u-text u-text-2">We are an ambitious studio and are looking for enthusiastic people to join our
                 team.</p>
+            <div class="u-form-send-message u-form-send-success">
+                {% for msg in messages %}
+                    {{ msg }}
+                {% endfor %}
+            </div>
+
             <div class="u-form u-palette-1-dark-1 u-radius-10 u-form-1">
                 <form method="POST" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form"
                       style="padding: 50px;">
@@ -55,7 +61,9 @@
 
                     <div class="u-align-left u-form-group u-form-submit u-form-group-4">
                         <button id="form-btn"
-                                class="u-active-palette-2-light-2 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-2 u-radius-8 u-text-palette-2-base u-white u-btn-1">ارسال</button>
+                                class="u-active-palette-2-light-2 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-2 u-radius-8 u-text-palette-2-base u-white u-btn-1">
+                            ارسال
+                        </button>
                     </div>
                     <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent.</div>
                     <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors
