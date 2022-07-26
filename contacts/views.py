@@ -89,15 +89,15 @@ def export(request):
         })
         exportables.append({
             'style': font_style,
-            'value': contact.phone
-        })
-        exportables.append({
-            'style': font_style,
             'value': contact.education
         })
         exportables.append({
             'style': font_style,
             'value': contact.job
+        })
+        exportables.append({
+            'style': font_style,
+            'value': contact.phone
         })
 
         for col_num in range(len(exportables)):
