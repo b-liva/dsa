@@ -17,6 +17,7 @@ class ContactListView(ListView):
 
 class ContactCreateView(CreateView):
     model = Contact
+    template_name = 'contacts/contact_form1.html'
     form_class = ContactForm
 
     def form_valid(self, form):
@@ -24,7 +25,7 @@ class ContactCreateView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('contact:add')
+        return reverse('contact:form1')
 
 
 def export(request):
