@@ -28,6 +28,19 @@ class ContactCreateView(CreateView):
         return reverse('contact:form1')
 
 
+class ContactCreateViewForm2(CreateView):
+    model = Contact
+    template_name = 'contacts/contact_form2.html'
+    form_class = ContactForm
+
+    def form_valid(self, form):
+        messages.success(self.request, 'اطلاعات با موفقیت ثبت شد.')
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('contact:form2')
+
+
 def export(request):
     response = HttpResponse(content_type='application/ms-excel')
     response['Content-Disposition'] = 'attachment; filename="contacts.xls"'
