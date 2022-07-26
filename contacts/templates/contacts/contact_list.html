@@ -1,6 +1,35 @@
 {% extends 'contacts/page_elements/base.html' %}
 {% block content %}
-
-    <p>contacts</p>
-    <p>{{ contacts }}</p>
+    <div class="row justify-content-center">
+        <h4 class="u-text u-text-2">اطلاعات ثبت شده</h4>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <button type="button" class="btn btn-sm btn-success float-right">فایل</button>
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">نام</th>
+                    <th scope="col">نام خانوادگی</th>
+                    <th scope="col">تحصیلات</th>
+                    <th scope="col">شغل</th>
+                    <th scope="col">شماره تماس</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for contact in contacts %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ contact.first_name }}</td>
+                        <td>{{ contact.last_name }}</td>
+                        <td>{{ contact.education }}</td>
+                        <td>{{ contact.job }}</td>
+                        <td>{{ contact.phone }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
