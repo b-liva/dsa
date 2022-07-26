@@ -38,3 +38,6 @@ body {
 .box{
     border-radius: 20px;
 }
+.ltr-element{
+    direction: ltr;
+}
