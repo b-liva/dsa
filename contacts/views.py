@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.contrib import messages
 from django.views.generic import ListView, CreateView
 
-from .forms import ContactForm
+from .forms import ContactForm, ContactForm2
 from .models import Contact
 # Create your views here.
 
@@ -31,7 +31,7 @@ class ContactCreateView(CreateView):
 class ContactCreateViewForm2(CreateView):
     model = Contact
     template_name = 'contacts/contact_form2.html'
-    form_class = ContactForm
+    form_class = ContactForm2
 
     def form_valid(self, form):
         messages.success(self.request, 'اطلاعات با موفقیت ثبت شد.')

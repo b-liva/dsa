@@ -32,3 +32,9 @@ body {
     background-color: #b8c7de;
     border-color: #3455be;
 }
+#form-message-warning, #form-message-success{
+    display: block;
+}
+.box{
+    border-radius: 20px;
+}
