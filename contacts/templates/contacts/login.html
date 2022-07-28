@@ -1,7 +1,7 @@
 {% extends 'contacts/page_elements/base2.html' %}
 {% block content %}
 
-    <div class="col-lg-6 offset-3">
+    <div class="col-lg-6 mx-auto">
         <div class="box">
             <form class="mb-5" method="post" id="contactForm" name="contactForm">
                 {% csrf_token %}
@@ -24,7 +24,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="submit" value="ارسال" class="btn btn-block btn-primary rounded-0 py-2 px-4">
+                        <input type="submit" value="ورود" class="btn btn-block btn-primary rounded-0 py-2 px-4">
                     </div>
                 </div>
             </form>

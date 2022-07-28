@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3o#0g8j*pt%_npoi3w=x-6%nj57%b@%urlaul%cn_%a-v9c10u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["tsapp.pythonanywhere.com"]
+ALLOWED_HOSTS = ["tsapp.pythonanywhere.com", "127.0.0.1"]
 
 # Application definition
 
