@@ -1,5 +1,6 @@
 import xlwt
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.urls import reverse
 from django.contrib import messages
@@ -10,7 +11,26 @@ from .models import Contact
 # Create your views here.
 
 
-class ContactListView(ListView):
+from django.contrib.auth.views import LoginView, LogoutView
+from django.shortcuts import reverse
+from contacts.forms import CustomAuthenticationForm
+
+
+class Login(LoginView):
+    template_name = 'contacts/login.html'
+    form_class = CustomAuthenticationForm
+
+    def get_success_url(self):
+        return reverse('contact:index')
+
+
+class Logout(LogoutView):
+
+    def get_next_page(self):
+        return reverse('login')
+
+
+class ContactListView(LoginRequiredMixin, ListView):
     model = Contact
     context_object_name = 'contacts'
 
@@ -41,6 +61,7 @@ class ContactCreateViewForm2(CreateView):
         return reverse('contact:form2')
 
 
+@login_required
 def export(request):
     response = HttpResponse(content_type='application/ms-excel')
     response['Content-Disposition'] = 'attachment; filename="contacts.xls"'

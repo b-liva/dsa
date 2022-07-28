@@ -1,3 +1,4 @@
+from django.contrib.auth.forms import AuthenticationForm
 from django import forms
 
 from contacts.models import Contact
@@ -57,3 +58,10 @@ class ContactForm2(forms.ModelForm):
                 'class': 'form-control'
             })
         }
+
+
+class CustomAuthenticationForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomAuthenticationForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['class'] = ' form-control'
+        self.fields['password'].widget.attrs['class'] = ' form-control'
