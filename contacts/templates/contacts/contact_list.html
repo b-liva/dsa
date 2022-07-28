@@ -5,7 +5,11 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-auto">
-            <a href="{% url 'contact:export' %}" type="button" class="btn btn-sm btn-success float-right">فایل</a>
+            <div class="col-md-4 offset-8">
+                <a href="{% url 'logout' %}" type="button" class="float-right btn btn-sm btn-danger">خروج</a>
+                <a href="{% url 'contact:export' %}" type="button" class="float-right btn btn-sm btn-info">فایل</a>
+            </div>
+
             <table class="table table-responsive">
                 <thead>
                 <tr>

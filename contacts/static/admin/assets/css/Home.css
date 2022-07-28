@@ -330,7 +330,9 @@ footer {
     bottom: 0;
     width: 100%;
 }
-.u-blue-80{
-    background-color: #2c3a66;
-    color: whitesmoke;
+.btn-red{
+    color: darkred;
+}
+.btn-blue{
+    color: #3455be;
 }
